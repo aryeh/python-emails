@@ -185,7 +185,7 @@ def sanitize_address(addr, encoding='ascii'):
 
 
 class MIMEMixin():
-    def as_string(self, unixfrom=False, linesep='\n'):
+    def as_string(self, unixfrom=False, linesep='\r\n'):
         """Return the entire formatted message as a string.
         Optional `unixfrom' when True, means include the Unix From_ envelope
         header.
@@ -204,7 +204,7 @@ class MIMEMixin():
     if is_py2:
         as_bytes = as_string
     else:
-        def as_bytes(self, unixfrom=False, linesep='\n'):
+        def as_bytes(self, unixfrom=False, linesep='\r\n'):
             """Return the entire formatted message as bytes.
             Optional `unixfrom' when True, means include the Unix From_ envelope
             header.
